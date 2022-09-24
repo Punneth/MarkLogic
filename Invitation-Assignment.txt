@@ -1,0 +1,182 @@
+(: 1.	Insert above document into database with URL “/Invitation” :)
+
+xquery version "1.0-ml";
+xdmp:document-insert("/Invitation",
+<txml>
+    <marriageInvitation>
+        <marriageDetails>
+            <marriageDAte>2022-09-22</marriageDAte>
+            <groom>ABC</groom>
+            <bride>DEF</bride>
+            <venue>XYZ</venue>
+        </marriageDetails>
+        <events>
+            <event>
+                <eventName>Haldi</eventName>
+                <date>2022-09-19</date>
+                <dressCode>Yellow</dressCode>
+            </event>
+            <event>
+                <eventName>Mehndi</eventName>
+                <date>2022-09-20</date>
+                <dressCode>Green</dressCode>
+            </event>
+            <event>
+                <eventName>Pooja</eventName>
+                <date>2022-09-21</date>
+                <dressCode>Red</dressCode>
+            </event>
+            <event>
+                <eventName>Reception</eventName>
+                <date>2022-09-23</date>
+                <dressCode>Ethnic</dressCode>
+            </event>
+        </events>
+        <Guests>
+            <guest>
+                <name>Sathish</name>
+                <address>Hoodi</address>
+                <contact>9211</contact>
+                <headcount>3</headcount>
+            </guest>
+            <guest>
+                <name>Manoj</name>
+                <address>HSR Layout</address>
+                <contact>9211</contact>
+                <headcount>2</headcount>
+            </guest>
+            <guest>
+                <name>Soham</name>
+                <address>Marathalli</address>
+                <contact>9211</contact>
+                <headcount>5</headcount>
+            </guest>
+            <guest>
+                <name>Vikram</name>
+                <address>Hoodi</address>
+                <contact>9211</contact>
+                <headcount>2</headcount>
+            </guest>
+        </Guests>
+    </marriageInvitation>
+</txml>)
+
+
+
+(: 2. For Each guest Create Document with URL “/guest/{guest name}” and add to collection “Guests”. :)
+
+xquery version "1.0-ml";
+
+for $k in fn:doc("/Invitation")//guest
+let $a :=$k/name/text()
+         return (xdmp:document-insert( fn:concat("/guest/", $a),     
+                      	$k,
+                        <options xmlns="xdmp:document-insert">
+                        <permissions>{xdmp:default-permissions()}</permissions>
+                        <collections>
+                        <collection>Guests</collection>
+                        </collections>
+                        </options>
+                            ))
+
+  
+  
+  
+(: 3. Return all guests and sort by name in descending order :)
+
+xquery version "1.0-ml";
+
+for $guest in doc("/Invitation")//guest
+let $name := $guest/name/text()
+let $address := $guest/address/text()
+let $contact := $guest/contact/text()
+let $headcount := $guest/headcount/text()
+order by $name descending
+return $guest
+	
+
+(: 4.	Return all guests and group by address :)
+
+xquery version "1.0-ml";
+
+for $j in fn:distinct-values(fn:collection("Guests")/guest/address/text())
+return  element result{element address{$j}, for $i in fn:collection("Guests")
+            return  $i[.//address/text() eq $j]}
+	
+	
+
+(: 5.	For Each Guest Create Document and insert into collections “invitation” and “{guest name}” in below format :)
+
+xquery version "1.0-ml";
+for $i in fn:doc("/Invitation")
+for $k in fn:collection("Guests")
+return xdmp:document-insert("/" || $k//name/text(),
+(<txml>
+        <marriageInvitation>{$i//marriageDetails}{$i//events}{$k}
+        </marriageInvitation> </txml>)
+,
+ <options xmlns="xdmp:document-insert">
+<collections>
+ <collection>invitation</collection>
+</collections>
+ </options>
+ )
+  
+  
+  
+(: 6.	For Each event create Document and insert into collection “event”  in below format URL -> “/event/{event Name}” :)
+
+for $i in fn:doc("/Invitation")
+for $k in $i//event
+let $j :=$k/eventName/text()
+return xdmp:document-insert(fn:concat("/event/",$j),
+(<txml>
+        <marriageInvitation>{$i//marriageDetails}{$k}
+        </marriageInvitation> </txml>),
+         <options xmlns="xdmp:document-insert">
+<collections>
+ <collection>event</collection>
+</collections>
+ </options>)
+
+
+
+(: 7.	Write a Function which return Interval For given input start datetime, end datetime and interval duration(Day, Hours). :)
+
+xquery version "1.0-ml";
+declare function local:convert($start as xs:dateTime,$end as xs:dateTime,$interval as xs:dayTimeDuration,$g)
+{ 
+       if(($start+$interval)<=$end)
+      then
+            (<interval attr ="{$g}">     
+            <startdatetime> {$start+(xs:dayTimeDuration("PT1S"))} </startdatetime>     
+            <enddatetime> {$start+$interval}</enddatetime >
+            </interval>,
+            local:convert($start+$interval,$end,$interval,$g+1))
+           
+            else 
+                (<interval attr ="{$g}">     
+                <startdatetime> {$start+(xs:dayTimeDuration("PT1S"))} </startdatetime>     
+                <enddatetime> {$end}</enddatetime >
+                </interval>)
+
+};
+<IntervalDetails> 
+{let $a := xs:dateTime("2001-10-26T03:00:00")
+let $b := xs:dateTime("2001-10-26T06:00:00")
+let $c := xs:dayTimeDuration("PT1H")
+
+return local:convert($a,$b,$c,1)}
+</IntervalDetails>
+
+
+(: 8.	Write function to convert date time to UTC DateTime. :)
+
+xquery version "1.0-ml";
+
+declare function local:convert($date as xs:dateTime){
+    
+    fn:adjust-dateTime-to-timezone(xs:dateTime($date)-xs:dayTimeDuration("PT5H30M"), ())
+};
+
+local:convert(current-dateTime())
