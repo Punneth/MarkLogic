@@ -1,0 +1,147 @@
+20%
+Weightage
+1. Understanding of the requirement--Puneeth S B
+1.1) Classification of CR type - Addition, Essential, Non-Essential, etc.
+1.2 ) Participation in BRD discussion.
+
+
+Getting Involved in CR discussion/priority 100%
+1.1: Understand CR requirement overall Activities +30%
+1.1.1: Analysing system impact +20%
+1.1.2: Create System Design on the basis of BRD +30%
+
+1.2: Understanding gaps on the based on BRD +20%
+
+
+===
+
+20%
+Weightage
+2. Maintain high standards of code quality and readability-- Puneeth S B
+2.1) Check Code coverage for Junit and SonarQube
+2.2) Regular code review process for each CR
+Maintain Quality for high standards 100%
+-2.1.1: Code coverage by jUnit tests +40%
+-2.1.2: Code coverage by SonarQube +30%
+-2.2: Code review feedback metrics +10 %
+-2.2.1: Removal of static code +20%
+
+==
+
+10%
+Weightage
+3. Ensure the security and compliance of the payment gateway platform--Puneeth S B
+3.1) Security training awareness
+
+Maintain Quality for Security and Compliance 100%
+-3.1.1: Learning/Awareness secure developments 100%
+
+==
+
+20%
+Weightage
+4. Improve efficiency and reliability of deployment--Puneeth S B
+4.1) Deployment frequency should be properly plan and it should be less.
+4.2) Deployment and Rollback Plan should be maintain
+4.3) Deployment Rollback Kaizen
+CICD for all components and make deployment eazy 100%
+-4.1: Deployment frequency 30%
+-4.2: Adoption rate of continuous deployment practices 50%
+-4.3: Check deployment rollback reason and maintain Kaizen 20%
+
+==
+
+30%
+Weightage
+5. Ensure understanding domain knowledge and Enhancement--Puneeth S B
+5.1) Technical enhancement
+5.2) Implement Advanced Feature (R & D )
+Maintain Code Quality And Enhabcements 100%
+-5.1 :R & D for new Feature in replacement of existing one 50%
+-5.2 :Continuous learning new enhancement. 50%
+
+==
+
+
+
+Competency
+
+20%
+Weightage
+Integrity
+
+
+===
+
+
+20%
+Weightage
+Ability to learn & Shows initiative
+To what extent did this person contribute to any major initiatives?
+To what extent did they raise the standard of quality through work?
+
+
+==
+
+
+20%
+Weightage
+Accuracy in work & Results oriented
+
+
+==
+
+20%
+Weightage
+Oral & written Communication
+How effectively did this person share knowledge with others?
+To what extent did they provide constructive feedback regularly?
+
+
+==
+
+20%
+Weightage
+Discipline & Time Management
+
+==
+
+10%
+Weightage
+Critical Thinking/Problem Solving
+How has this person approached challenges?
+To what extent did they employ creative ideas in solving problems?
+
+==
+
+10%
+Weightage
+Teamwork/Collaboration
+To what extent was this person considerate of the needs of others?
+To what extent did they demonstrate helpfulness towards coworkers?
+
+==
+
+
+10%
+Weightage
+Decision-Making
+
+
+==
+
+10%
+Weightage
+Diagnostic and Analytical Skills
+
+==
+
+10%
+Weightage
+Leadership and Navigation
+How well did this person handle conflict?
+To what extent did they exhibit a strong ability to motivate others?
+
+==
+
+
