@@ -145,3 +145,124 @@ To what extent did they exhibit a strong ability to motivate others?
 ==
 
 
+
+
+
+
+
+
+
+
+
+
+
+buildscript {
+    repositories { jcenter() }
+}
+
+plugins {
+    id 'jacoco'
+    id 'org.sonarqube' version '2.5'
+}
+
+apply plugin: 'java'
+apply plugin: 'maven'
+apply plugin: 'idea'
+apply plugin: 'eclipse'
+apply plugin: 'jacoco'
+
+
+
+jacoco {
+    toolVersion = "0.8.10" // Specify the JaCoCo version
+}
+
+jacocoTestReport {
+    dependsOn test // Ensure tests are run before generating the report
+    reports {
+        xml.required = true // Enable XML report
+        html.required = true // Enable HTML report
+    }
+}
+
+// Configure the test task to finalize the report generation
+tasks.test {
+    finalizedBy jacocoTestReport // Generate report after tests are run
+}
+
+
+
+
+group = 'org.jpos.template'
+version = '2.1.9'
+//version = '2.1.10'
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+    maven { url 'http://nexus.atomtech.in/repository/ndps-maven-group/' 
+    credentials{
+    
+    username 'nexus-user'
+    password 'Nexus@123'
+    }
+    
+   }
+    gradlePluginPortal()
+}
+//'org.jpos:jpos:2.1.6-SNAPSHOT'
+dependencies {
+    compile ('org.jpos:jpos:2.+') {
+     //   exclude(module: 'junit')
+     //   exclude(module: 'hamcrest-core')
+         
+    }
+    implementation "org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.5"
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2' // Use a specific version
+    testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.8.2' // Use a specific version
+    
+   // testCompile 'junit:junit:4.8.2'
+     
+    
+    compile group:'org.jpos.ee', name:'jposee-dbsupport', version:'2.2.8'
+    compile group:'org.jpos.ee', name:'jposee-db-mysql', version:'2.2.8'
+    compile group:'org.jpos.ee', name:'jposee-txn', version:'2.2.8'
+    compile group:'org.jpos.ee', name:'jposee-http-client', version:'2.2.8'
+    
+    //compile group:'org.jpos.ee', name:'jposee-freemarker-decorator', version:'2.2.+'
+     compile group: 'org.jdom', name: 'jdom2', version: '2.0.6.1'
+     compile group: 'org.json', name: 'json', version: '20200518'
+    
+     /*testCompile 'org.junit.jupiter:junit-jupiter-api:5+'    //done
+     testCompile 'org.junit.jupiter:junit-jupiter-engine:5+' //done 5.6.2
+     */
+     testCompile 'org.meanbean:meanbean:2.+'
+     testImplementation group: 'org.meanbean', name: 'meanbean', version: '2.0.3'
+    
+     testCompile 'org.mockito:mockito-core:3.+'
+     testCompile 'org.mockito:mockito-inline:3.+'
+     testCompile 'org.mockito:mockito-junit-jupiter:3.+'
+     
+
+
+
+    implementation 'com.atom.ots-java:OTSMerchantJar:3.0.5@jar'
+	implementation group: 'javax.validation', name: 'validation-api', version: '2.0.1.Final'
+	implementation group: 'org.hibernate.validator', name: 'hibernate-validator', version: '6.0.20.Final'
+	implementation group: 'javax.el', name: 'javax.el-api', version: '3.0.0'
+	implementation group: 'org.glassfish.web', name: 'javax.el', version: '2.2.6'
+	implementation 'com.atom.ots-java:ATOMAESEncryption:1.0'
+
+}
+
+// Add the test configuration here
+tasks.withType(Test) {
+    useJUnitPlatform() // This is necessary for JUnit 5
+}
+
+apply from: 'jpos-app.gradle'
+
+
+
