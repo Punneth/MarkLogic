@@ -266,3 +266,99 @@ apply from: 'jpos-app.gradle'
 
 
 
+
+
+
+
+
+
+
+
+
+package in.atomtech.mw.channel;
+
+import java.io.IOException;
+import java.net.ServerSocket;
+
+import org.jpos.iso.ISOException;
+import org.jpos.iso.ISOMsg;
+import org.jpos.iso.ISOPackager;
+import org.jpos.iso.ISOUtil;
+import org.jpos.iso.ISOFilter.VetoException;
+import org.jpos.iso.channel.NACChannel;
+import org.jpos.util.LogEvent;
+import org.jpos.util.Logger;
+
+public class HitachiChannel extends NACChannel {
+
+	public HitachiChannel() {
+		super();
+	}
+
+	public HitachiChannel(ISOPackager p, byte[] TPDU, ServerSocket serverSocket) throws IOException {
+		super(p, TPDU, serverSocket);
+	}
+
+	public HitachiChannel(ISOPackager p, byte[] TPDU) throws IOException {
+		super(p, TPDU);
+	}
+
+	public HitachiChannel(String host, int port, ISOPackager p, byte[] TPDU) {
+		super(host, port, p, TPDU);
+	}
+
+	
+	public void send(ISOMsg m) throws IOException, ISOException {
+		
+		LogEvent evt = new LogEvent(this, "send");
+		
+		try {
+			
+			if (!isConnected())
+				throw new IOException("unconnected ISOChannel");
+			
+			m.setDirection(ISOMsg.OUTGOING);
+			ISOPackager p = getDynamicPackager(m);
+			m.setPackager(p);
+			m = applyOutgoingFilters(m, evt);
+			evt.addMessage(m);
+			m.setDirection(ISOMsg.OUTGOING); // filter may have dropped this info
+			m.setPackager(p); // and could have dropped packager as well
+			byte[] b = pack(m);
+			
+			System.out.println(ISOUtil.hexdump(b));
+			
+			synchronized (serverOutLock) {
+				sendMessageLength(b.length + getHeaderLength(m));
+				sendMessageHeader(m, b.length);
+				sendMessage(b, 0, b.length);
+				sendMessageTrailer(m, b);
+				serverOut.flush();
+			}
+			
+			cnt[TX]++;
+			setChanged();
+			notifyObservers(m);
+			
+		} catch (VetoException e) {
+			// if a filter vets the message it was not added to the event
+			evt.addMessage(m);
+			evt.addMessage(e);
+			throw e;
+		} catch (ISOException e) {
+			evt.addMessage(e);
+			throw e;
+		} catch (IOException e) {
+			evt.addMessage(e);
+			throw e;
+		} catch (Exception e) {
+			evt.addMessage(e);
+			throw new IOException("unexpected exception", e);
+		} finally {
+			Logger.log(evt);
+		}
+	}
+}
+
+
+
