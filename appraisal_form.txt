@@ -362,3 +362,79 @@ public class HitachiChannel extends NACChannel {
 
 
 
+
+===
+
+
+pipeline {
+    agent any
+ 
+    tools {
+        gradle 'Gradle6'  // Adjust the Gradle version as needed
+        jdk 'jdk8'         // Adjust the JDK version as needed
+    }
+ 
+    environment {
+        // Explicitly set the JAVA_HOME and PATH for the selected JDK in the environment block
+        JAVA_HOME = tool name: 'jdk8', type: 'JDK'  // Ensure 'JDK 11' is defined in Global Tool Configuration
+        PATH = "${JAVA_HOME}/bin:${env.PATH}"
+    }
+ 
+    stages {
+        stage('Checkout') {
+            steps {
+                git branch: 'dev_junit', credentialsId: 'Gitlab-Cred', url: 'https://gitlab.atomtech.in/atommw/txncore/middleware.git'
+            }
+        }
+        stage('Set Gradle Wrapper Permissions') {
+            steps {
+                // Set execute permissions for the gradle wrapper
+                sh 'chmod +x ./gradlew'
+            }
+        }
+        stage('Build') {
+            steps {
+                // Clean and build the project using Gradle
+                sh './gradlew clean installApp'
+            }
+        }
+        stage('Test') {
+            steps {
+                // Run the tests using Gradle
+                sh './gradlew test'
+            }
+        }
+        stage('SonarQube Analysis') {
+            environment {
+                scannerHome = tool "SonarQube-Scanner" // Ensure SonarQube scanner is set in Global Tool Configuration
+            }
+            steps {
+                withSonarQubeEnv("SonarQube-Container") {
+                    // Run SonarQube analysis
+                    sh """
+                    ${scannerHome}/bin/sonar-scanner \
+                    -Dsonar.projectKey=txncore-middleware-dev \
+                    -Dsonar.projectName=txncore-middleware-dev \
+                    -Dsonar.projectVersion=1.0 \
+                    -Dsonar.sourceEncoding=UTF-8 \
+                    -Dsonar.language=java \
+                    -Dsonar.java.binaries=build/classes/java/main \
+                    -Dsonar.coverage.jacoco.xmlReportPaths=build/reports/jacoco/test/jacocoTestReport.xml \
+                    -Dsonar.test.exclusions=**/*Test.java
+                    """
+                }
+            }
+        }
+    }
+ 
+    post {
+        always {
+            // Archive the build artifacts
+            archiveArtifacts artifacts: 'build/libs/*.jar', allowEmptyArchive: true
+            // Publish test results
+            junit '**/build/test-results/test/*.xml'  // Adjust path based on your project structure
+        }
+    }
+}
+
+
