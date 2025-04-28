@@ -822,5 +822,943 @@ apply from: 'jpos-app.gradle'
 
 
 
+()()()
+
+C:\Users\PuneethSB\workspace\middleware>gradle clean test jacocoTestReport
+
+> Task :compileJava
+Note: Some input files use unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+
+> Task :compileTestJava
+Note: C:\Users\PuneethSB\workspace\middleware\src\test\java\in\atomtech\mw\transaction\titan\PrepareTitanRequestTest.java uses or overrides a deprecated
+ API.
+Note: Recompile with -Xlint:deprecation for details.
+Note: C:\Users\PuneethSB\workspace\middleware\src\test\java\in\atomtech\mw\packager\BitmapMessageTest.java uses unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+
+> Task :test
+
+BatchClosureQueryResultTest > test1() PASSED
+
+HitachiChannelTest > testSend() PASSED
+
+HitachiChannelTest > testConstructor1() PASSED
+
+HitachiChannelTest > testConstructor2() PASSED
+
+HitachiChannelTest > testConstructor3() PASSED
+
+HitachiChannelTest > test() PASSED
+
+HitachiChannelTest > test1() PASSED
+
+HitachiChannelTest > testConstructor() PASSED
+
+AcquirerDaoTest > equals11Test() PASSED
+
+AcquirerDaoTest > equals12Test() PASSED
+
+AcquirerDaoTest > equals13Test() PASSED
+
+AcquirerDaoTest > equals14Test() PASSED
+
+AcquirerDaoTest > equals15Test() PASSED
+
+AcquirerDaoTest > equals17Test() PASSED
+
+AcquirerDaoTest > equals20Test() PASSED
+
+AcquirerDaoTest > equals21Test() PASSED
+
+AcquirerDaoTest > equals22Test() PASSED
+
+AcquirerDaoTest > equals23Test() PASSED
+
+AcquirerDaoTest > equals33Test() PASSED
+
+AcquirerDaoTest > equals1211Test() PASSED
+
+AcquirerDaoTest > equalsbankTest() PASSED
+
+AcquirerDaoTest > equalsNullTest() PASSED
+
+AcquirerDaoTest > TransTest() PASSED
+
+AcquirerDaoTest > acqTest() PASSED
+
+AcquirerDaoTest > equalsTestObj1() PASSED
+
+AcquirerDaoTest > equalsTest06() PASSED
+
+AcquirerDaoTest > equalsTest07() PASSED
+
+AcquirerDaoTest > equals1Test() PASSED
+
+AcquirerDaoTest > equalsTest1() PASSED
+
+AcquirerDaoTest > equalsTest2() PASSED
+
+AcquirerDaoTest > equalsTestObj12() PASSED
+
+AcquirerDaoTest > equalsTestObj13() PASSED
+
+AcquirerDaoTest > equalsTestObj14() PASSED
+
+AcquirerDaoTest > equalsbankTest121() PASSED
+
+AcquirerDaoTest > equalsbankTest131() PASSED
+
+AcquirerDaoTest > hascodeTest1() PASSED
+
+AcquirerDaoTest > hascodD99() PASSED
+
+AcquirerDaoTest > hascode32() PASSED
+
+AcquirerDaoTest > hascode33() PASSED
+
+AcquirerDaoTest > hascode99() PASSED
+
+AcquirerDaoTest > equalsTest() PASSED
+
+AcquirerDaoTest > equalsbankTest1() PASSED
+
+AcquirerDaoTest > hashCodeTest() PASSED
+
+AcquirerDaoTest > daoTest() PASSED
+
+AcquirerDaoTest > equalsTestObj() PASSED
+
+AcquirerDaoTest > equalsbankTest12() PASSED
+
+AcquirerDaoTest > equalsbankTest13() PASSED
+
+DailyTaskAdaptorTest > testStartService() PASSED
+
+DailyTaskAdaptorTest > testInit() PASSED
+
+EFSMainDispatcherTest > processTest() PASSED
+
+EFSMainDispatcherTest > setConfigurationTest() PASSED
+
+EFSMainDispatcherTest > sendResponseToSourceTest() PASSED
+
+EFSUnhandledRequestListenerRupayTest > testProcess() PASSED
+
+EFSUnhandledRequestListenerRupayTest > handleNetworkMessagesTest() PASSED
+
+EFSUnhandledRequestListenerRupayTest > processTest() PASSED
+
+EFSUnhandledRequestListenerRupayTest > setConfigurationTest() PASSED
+
+EFSUnhandledRequestListenerRupayTest > handleNetworkMessagesTest1() PASSED
+
+DailyTaskAdaptorTest > testInitServiceThrowsNullPointerException() PASSED
+
+DailyTaskAdaptorTest > testRun() PASSED
+
+DailyTaskAdaptorTest > testStartService() PASSED
+
+DailyTaskAdaptorTest > testStopService() PASSED
+
+DailyTaskAdaptorTest > testInitServiceThrowsNullPointerException1() PASSED
+
+DailyTaskAdaptorTest > testRunThrowsNullPointerException() PASSED
+
+DailyTaskAdaptorTest > testGetWhenThrowsNullPointerException() PASSED
+
+DailyTaskAdaptorTest > testWaitUntilStartTimeThrowsNullPointerException() PASSED
+
+DailyTaskAdaptorTest > testStopService1() PASSED
+
+DailyTaskAdaptorTest > testConstructor() PASSED
+
+AsciiBitmapPackagerTest > unpackTest() PASSED
+
+AsciiBitmapPackagerTest > unpacktest1() PASSED
+
+AsciiBitmapPackagerTest > unpacktest2() PASSED
+
+AsciiDataPackagerTest > unpackTest() PASSED
+
+AsciiDataPackagerTest > AsciiDataPackagerTest1() PASSED
+
+AsciiDataPackagerTest > describeTest() PASSED
+
+AsciiLengthPackagerTest > unpackTest() PASSED
+
+AsciiLengthPackagerTest > lengthPackagerTest() PASSED
+
+AsciiLengthPackagerTest > packTest() PASSED
+
+BCDDataPackagerTest > unpackTest() PASSED
+
+BCDDataPackagerTest > ConTest() PASSED
+
+BCDDataPackagerTest > unpackTest1() PASSED
+
+BCDDataPackagerTest > unpackTest2() PASSED
+
+BCDLengthPackagerTest > unpackTest() PASSED
+
+BCDLengthPackagerTest > Consttest() PASSED
+
+BCDLengthPackagerTest > unpack1Test() PASSED
+
+BinaryDataPackagerTest > NOPDataPackagerTest() PASSED
+
+BinaryDataPackagerTest > test() PASSED
+
+BinaryDataPackagerTest > ConsttTest() PASSED
+
+BitmapMessageTest > unpackTest() PASSED
+
+BitmapMessageTest > setMTItest() PASSED
+
+BitmapMessageTest > getTest() PASSED
+
+BitmapMessageTest > get() PASSED
+
+BitmapMessageTest > fieldCustTest() PASSED
+
+BitmapMessageTest > packTest() PASSED
+
+BitmapMessageTest > unpackTest11() PASSED
+
+BitmapMessageTest > unpackTest12() PASSED
+
+BitmapMessageTest > packTest1() PASSED
+
+BitmapMessageTest > unpackTest1() PASSED
+
+BitmapMessageTest > describeTest() PASSED
+
+BitmapPackagerTest > Bitmaptest() PASSED
+
+BitmapPackagerTest > unpacTest() PASSED
+
+EbcdicDataPackagerTest > unpackTest() PASSED
+
+EbcdicDataPackagerTest > testTest() PASSED
+
+EbcdicDataPackagerTest > packTest() PASSED
+
+EbcdicLengthPackagerTest > unpacktest() PASSED
+
+EbcdicLengthPackagerTest > packTestEx() PASSED
+
+EbcdicLengthPackagerTest > packTest() PASSED
+
+GenericTLVDataPackagerTest > GenericTest() PASSED
+
+AtomEncryptionTest > testEncryptFailureCase() PASSED
+
+AtomEncryptionTest > testMain() PASSED
+
+AtomEncryptionTest > testDecrypt() PASSED
+
+AtomEncryptionTest > testDecryptFailCase() PASSED
+
+AtomSignatureTest > testGenerateSignature() PASSED
+
+AtomSignatureTest > testGenerateSignatureForFailureCase() PASSED
+
+EFSLunaEFTCoreTest > getKVCOfTMKTest() PASSED
+
+EFSLunaEFTCoreTest > generateTPKTest() PASSED
+
+EFSLunaEFTCoreTest > decryptDataTest() PASSED
+
+EFSLunaEFTCoreTest > getKEKTest() PASSED
+
+EFSLunaEFTCoreTest > importDPKTest() PASSED
+
+EFSLunaEFTCoreTest > createStatusRequestTest() PASSED
+
+EFSLunaEFTCoreTest > verifyMACTest() PASSED
+
+EFSLunaEFTCoreTest > importPublicKeyIntoHSMTest() PASSED
+
+EFSLunaEFTCoreTest > encryptDataTest() PASSED
+
+EFSLunaEFTCoreTest > encryptTMKUnderPublicKeyTest() PASSED
+
+EFSLunaEFTCoreTest > generateMACTest() PASSED
+
+EFSLunaEFTCoreTest > getBitTest() PASSED
+
+EFSLunaEFTCoreTest > getLengthBytes() PASSED
+
+EFSLunaEFTCoreTest > translatePINTest() PASSED
+
+EFSLunaEFTCoreTest > importZPKTest() PASSED
+
+EFSLunaEFTCoreTest > generateRandomTMKFromHSMTest() PASSED
+
+CheckTransactionAllowedToTerminalTest > testPrepareForNotAllowedTransaction() PASSED
+
+CheckTransactionAllowedToTerminalTest > testPrepareForAllTransactions() PASSED
+
+EFSBalanceEnquiryTest > testPrepare_ValidOriginAndMissingField35_Aborted1() PASSED
+
+EFSBalanceEnquiryTest > testPrepare_ValidOriginAndMissingField35_Aborted2() PASSED
+
+EFSBalanceEnquiryTest > testPrepare_ValidOriginAndMissingField35_Aborted3() PASSED
+
+EFSBalanceEnquiryTest > testPrepare_ValidOriginAndMissingField35_Aborted4() PASSED
+
+EFSBalanceEnquiryTest > testPrepare_ValidOriginAndMissingField35_Aborted() PASSED
+
+EFSBalanceEnquiryTest > testPrepare() PASSED
+
+EFSBuildCardTest > testPrepare() PASSED
+
+EFSBuildCardTest > testPrepareException() PASSED
+
+EFSCashAtPOSTest > testPrepare() PASSED
+
+EFSCheckDuplicateTransactionTest > testPrepare() PASSED
+
+EFSCheckDuplicateTransactionTest > testPrepareForTransactionIsEmpty() PASSED
+
+EFSCheckFieldsTest > testOptionalPCodeNotPresent() PASSED
+
+EFSCheckFieldsTest > testInvalidTimestamp() PASSED
+
+EFSCheckFieldsTest > testInvalidCard() PASSED
+
+EFSCheckFieldsTest > testPDC() PASSED
+
+EFSCheckFieldsTest > testAmounts() PASSED
+
+EFSCheckFieldsTest > testValidTimestamps() PASSED
+
+EFSCheckFieldsTest > testGenericFieldsExtraPresent() PASSED
+
+EFSCheckFieldsTest > testNoExtraFields() PASSED
+
+EFSCheckFieldsTest > testCaptureDate() PASSED
+
+EFSCheckFieldsTest > testValidCard() PASSED
+
+EFSCheckFieldsTest > testInvalidTransaction() PASSED
+
+EFSCheckFieldsTest > testMidAndTidWithSpaces() PASSED
+
+EFSCheckFieldsTest > testGenericFieldsOptionalNotPresent() PASSED
+
+EFSCheckFieldsTest > testMandatoryPCodeNotPresent() PASSED
+
+EFSCheckFieldsTest > testInvalidPCode() PASSED
+
+EFSCheckFieldsTest > testGenericFields() PASSED
+
+EFSCheckFieldsTest > testOriginalDataElements() PASSED
+
+EFSCheckFieldsTest > testInvalidMidAndTid() PASSED
+
+EFSCheckNetworkFieldsTest > validateDataElementTest() PASSED
+
+EFSCheckNetworkFieldsTest > setConfigurationTest() PASSED
+
+EFSCheckTerminalLimitsTest > testProcessForContact() PASSED
+
+EFSCheckTerminalLimitsTest > testFailScenarios() PASSED
+
+EFSCheckTerminalLimitsTest > testProcessForContactLess() PASSED
+
+EFSCheckTerminalTest > testPrepareWhenMerchantIsNotActive() PASSED
+
+EFSCheckTerminalTest > testPrepareWithoutTerminalId() PASSED
+
+EFSCheckTerminalTest > testPrepareWhenTerminalDataIsNull() PASSED
+
+EFSCheckTerminalTest > testDBException() PASSED
+
+EFSCheckTerminalTest > testPrepareForFailureCases1() PASSED
+
+EFSCheckTerminalTest > testPrepareForFailureCases() PASSED
+
+EFSCheckTerminalTest > testPrepareWhenTerminalNotPresent() PASSED
+
+EFSCheckTerminalTest > testPrepareFailCase() PASSED
+
+EFSCheckTerminalTest > testPrepareWhenTerminalIsNotActive() PASSED
+
+EFSCheckTerminalTest > testPrepareWhenMerchantObjectIsNull() PASSED
+
+EFSDecryptCardDataTest > testProcess() PASSED
+
+EFSDecryptCardDataTest > testProcessForFailureCases() PASSED
+
+EFSECHOApiTest > prepareTest() PASSED
+
+EFSGenerateAtomTxnIDTest > test() PASSED
+
+EFSGetDEKTest > test() PASSED
+
+EFSGetSmartRoutingDataTest > testProcess() PASSED
+
+EFSGetTMKUnderPKTest > test() PASSED
+
+EFSGetTPKUnderTMKTest > test() PASSED
+
+EFSGetTPKUnderTMKTest > test1() PASSED
+
+EFSMoneyAddTest > testPrepare_ValidOriginAndMissingField35_Aborted1() PASSED
+
+EFSMoneyAddTest > testPrepare_ValidOriginAndMissingField35_Aborted2() PASSED
+
+EFSMoneyAddTest > testPrepare_ValidOriginAndMissingField35_Aborted3() PASSED
+
+EFSMoneyAddTest > testPrepare_ValidOriginAndMissingField35_Aborted4() PASSED
+
+EFSMoneyAddTest > testPrepare_ValidOriginAndMissingField35_Aborted() PASSED
+
+EFSMoneyAddTest > testPrepare_ValidOriginAndMissingField35_Aborted10() PASSED
+
+EFSNotSupportedTest > testPrepare() PASSED
+
+EFSOfflineTest > test() PASSED
+
+EFSPurchaseTest > wrongDE3Check() PASSED
+
+EFSPurchaseTest > testForECOM() PASSED
+
+EFSPurchaseTest > test() PASSED
+
+EFSPurchaseTest > missingDE35() PASSED
+
+EFSPurchaseWithCashbackTest > testPrepare() PASSED
+
+EFSPurchaseWithCashbackTest > testPrepare1() PASSED
+
+EFSPurchaseWithCashbackTest > testPrepare2() PASSED
+
+EFSPurchaseWithCashbackTest > testPrepare3() PASSED
+
+EFSSendTestTransactionResponseToPOSTest > test() PASSED
+
+EFSSendToDestinationQueueTest > test() PASSED
+
+EFSSendToDestinationQueueTest > testCommitFailureTestCases() PASSED
+
+EFSSendToDestinationQueueTest > sendToSchemeQueue_Test() PASSED
+
+EFSStoreTerminalDataTest > prepare_test() PASSED
+
+EFSStoreTerminalDataTest > prepare_test1() PASSED
+
+EFSSwitchTest > prepare_test() PASSED
+
+EFSSwitchTest > selectTest() PASSED
+
+EFSTranslatePINTest > test1() PASSED
+
+EFSTranslatePINTest > test2() PASSED
+
+EMITest > prepare_test() PASSED
+
+EMITest > prepare_test10() PASSED
+
+EMITest > prepare_test11() PASSED
+
+EMITest > prepare_test13() PASSED
+
+EMITest > prepare_test112() PASSED
+
+EMITest > prepare_test1() PASSED
+
+EMITest > prepare_test2() PASSED
+
+EMITest > prepare_test3() PASSED
+
+EMITest > prepare_test5() PASSED
+
+EMITest > prepare_test6() PASSED
+
+EMITest > prepare_test7() PASSED
+
+EMITest > prepare_test8() PASSED
+
+EMITest > prepare_test9() PASSED
+
+Log2DatabaseHitachiTest > testAbort() PASSED
+
+Log2DatabaseHitachiTest > testPrepare() PASSED
+
+Log2DatabaseHitachiTest > testAbortWithMessageProcessingStatusAs0() PASSED
+
+Log2DatabaseHitachiTest > testAbortWithMessageToScheme() PASSED
+
+Log2DatabaseHitachiTest > testPrepareForAbort() PASSED
+
+Log2DatabaseHitachiTest > testCommit() PASSED
+
+Log2DatabaseHitachiTest > testForPreAuthCompletion() PASSED
+
+PreparePOSReversal2HitachiTest > testPrepareVoid() PASSED
+
+PreparePOSReversal2HitachiTest > testPreparePOSVoid() PASSED
+
+PreparePOSReversal2HitachiTest > testPreparePOSReversal() PASSED
+
+PreparePOSReversal2HitachiTest > testPrepareVoid1() PASSED
+
+PreparePOSReversal2HitachiTest > testPrepareVoid2() PASSED
+
+PreparePOSReversal2HitachiTest > testPrepare() PASSED
+
+PreparePOSReversal2HitachiTest > testPrepare1() PASSED
+
+PreparePOSReversal2HitachiTest > testPrepare2() PASSED
+
+PreparePOSReversal2HitachiTest > testPrepare4() PASSED
+
+PreparePOSReversal2HitachiTest > testPrepare21() PASSED
+
+PreparePOSReversal2HitachiTest > testPrepareTimeStamp() PASSED
+
+PreparePOSReversal2HitachiTest > testPreparePOSVoid1() PASSED
+
+PreparePOSReversal2HitachiTest > testPreparePOSReversal1() PASSED
+
+PreparePreAuthCompletionRequest2HitachiTest > testPrepare() PASSED
+
+PrepareRequest2HitachiTest > prepare1() PASSED
+
+PrepareRequest2HitachiTest > prepare() PASSED
+
+PrepareSwitchReversal2HitachiTest > testPrepare() PASSED
+
+PrepareSwitchReversal2HitachiTest > testFailureCase() PASSED
+
+QueryHitachiTest > testExpired() PASSED
+
+QueryHitachiTest > testMuxIsNotAvailableCase() PASSED
+
+QueryHitachiTest > testProcessWithMUXIsNotConnected() PASSED
+
+QueryHitachiTest > testProcessForContinuationsAsTrue() PASSED
+
+QueryHitachiTest > testResponseReceived() PASSED
+
+QueryHitachiTest > testMessage2SchemeMissingCase() PASSED
+
+QueryHitachiTest > testProcessWithOutDestination() PASSED
+
+QueryHitachiTest > testProcessWithContinuesAsFalseWithISOMsgAsNotNull() PASSED
+
+QueryHitachiTest > testProcessWithContinuesAsFalseWithISOMsgAsNull() PASSED
+
+SendResponseFromHitachiTest > testSetConfiguration() PASSED
+
+SendResponseFromHitachiTest > testSetTransactionManager() PASSED
+
+SendResponseFromHitachiTest > testProcess() PASSED
+
+SendResponseFromHitachiTest > testCommitWithFalseCase() PASSED
+
+SendResponseFromHitachiTest > testReverse() PASSED
+
+SendResponseFromHitachiTest > testCommit() PASSED
+
+MACTest > test() PASSED
+
+MerchantDataProcessTest > testProcessFailureCase() PASSED
+
+MerchantDataProcessTest > test() PASSED
+
+BatchClosureTest > testException() PASSED
+
+BatchClosureTest > testSetConfiguration() PASSED
+
+BatchClosureTest > testException1() PASSED
+
+BatchClosureTest > testPrepare() PASSED
+
+BatchClosureTest > testPrepare1() PASSED
+
+BatchClosureTest > testForDE60Missing() PASSED
+
+BatchClosureTest > testPrepareException() PASSED
+
+EFSBuildCardTest > testException() PASSED
+
+EFSBuildCardTest > testPrepare() PASSED
+
+EFSDecryptCardDataTest > testProcess() PASSED
+
+EFSDecryptCardDataTest > testProcessForFailureCases() PASSED
+
+EFSGetSmartRoutingDataTest > testPrepareIssuerNotSupported() PASSED
+
+EFSLog2DatabaseTest > testAbort() PASSED
+
+EFSLog2DatabaseTest > testPrepare() PASSED
+
+EFSLog2DatabaseTest > testPrepareForAbort() PASSED
+
+EFSLog2DatabaseTest > testCommit() PASSED
+
+EFSPrepareCCLTest > testProcessForFailCase() PASSED
+
+EFSPrepareCCLTest > testProcess() PASSED
+
+EFSPrepareLog2TitanTest > testProcess() PASSED
+
+EFSPrepareLog2TitanTest > testPrepareTitanInsertRequest() PASSED
+
+EFSPrepareLog2TitanTest > testCommit() PASSED
+
+EFSSendResponse2POSTest > testAbort() PASSED
+
+EFSSendResponse2POSTest > testPrepare() PASSED
+
+EFSSendResponse2POSTest > testPrepareForAbort() PASSED
+
+EFSSendResponse2POSTest > testCommit() PASSED
+
+GenerateCardTokenTest > testException() PASSED
+
+GenerateCardTokenTest > testeGneratePANCardToken() PASSED
+
+HTTPCallTest > testHttpPostConnection() PASSED
+
+PreAuthCompletionTest > testPrepare_ValidOriginAndMissingField35_Aborted4() PASSED
+
+PreAuthCompletionTest > testPrepare_ValidOriginAndMissingField35_Aborted() PASSED
+
+PurchaseWithTipTest > testPrepare_ValidOriginAndMissingField35_Aborted1() PASSED
+
+PurchaseWithTipTest > testPrepare_ValidOriginAndMissingField35_Aborted2() PASSED
+
+PurchaseWithTipTest > testPrepare_ValidOriginAndMissingField35_Aborted3() PASSED
+
+PurchaseWithTipTest > testPrepare_ValidOriginAndMissingField35_Aborted4() PASSED
+
+PurchaseWithTipTest > testPrepare_ValidOriginAndMissingField35_Aborted() PASSED
+
+EFSLog2DatabaseRupayTest > testAbort() PASSED
+
+EFSLog2DatabaseRupayTest > testPrepare() PASSED
+
+EFSLog2DatabaseRupayTest > testPrepareForAbort() PASSED
+
+EFSLog2DatabaseRupayTest > testCommit() PASSED
+
+EFSPreparePOSReversal2RupayTest > testPrepareVoid() PASSED
+
+EFSPreparePOSReversal2RupayTest > testPreparePOSVoid() PASSED
+
+EFSPreparePOSReversal2RupayTest > testPreparePOSReversal() PASSED
+
+EFSPreparePOSReversal2RupayTest > testPrepareVoid1() PASSED
+
+EFSPreparePOSReversal2RupayTest > testPrepareVoid2() PASSED
+
+EFSPreparePOSReversal2RupayTest > testPrepare() PASSED
+
+EFSPreparePOSReversal2RupayTest > testPrepare1() PASSED
+
+EFSPreparePOSReversal2RupayTest > testPrepare2() PASSED
+
+EFSPreparePOSReversal2RupayTest > testPrepare4() PASSED
+
+EFSPreparePOSReversal2RupayTest > testPrepare21() PASSED
+
+EFSPreparePOSReversal2RupayTest > testPrepareTimeStamp() PASSED
+
+EFSPreparePOSReversal2RupayTest > testPreparePOSVoid1() PASSED
+
+EFSPreparePOSReversal2RupayTest > testPreparePOSReversal1() PASSED
+
+EFSPrepareRequest2RupayTest > testPrepare() PASSED
+
+EFSPrepareSwitchReversal2RupayTest > testPrepare() PASSED
+
+EFSPrepareSwitchReversal2RupayTest > testFailureCase() PASSED
+
+EFSSendResponseFromRupayTest > testProcess() PASSED
+
+EFSSendResponseFromRupayTest > testCommitWithFalseCase() PASSED
+
+EFSSendResponseFromRupayTest > testCommit() PASSED
+
+Log2DatabaseMWTitanTest > testAbort() PASSED
+
+Log2DatabaseMWTitanTest > testPrepare() PASSED
+
+Log2DatabaseMWTitanTest > testAbortWithMessageProcessingStatusAs0() PASSED
+
+Log2DatabaseMWTitanTest > testAbortWithMessageToScheme() PASSED
+
+Log2DatabaseMWTitanTest > testPrepareForAbort() PASSED
+
+Log2DatabaseMWTitanTest > testCommit() PASSED
+
+Log2DatabaseMWTitanTest > testForPreAuthCompletion() PASSED
+
+Log2DatabaseMWTitanTest2 > test() PASSED
+
+PrepareTitanRequestTest > testProcess() PASSED
+
+PrepareTitanResponseTest > testPrepare() PASSED
+
+PrepareTitanResponseTest > testPrepare1() PASSED
+
+Log2DatabaseWorldlineTest > testAbort() PASSED
+
+Log2DatabaseWorldlineTest > testPrepare() PASSED
+
+Log2DatabaseWorldlineTest > testAbortWithMessageProcessingStatusAs0() PASSED
+
+Log2DatabaseWorldlineTest > testAbortWithMessageToScheme() PASSED
+
+Log2DatabaseWorldlineTest > testPrepareForAbort() PASSED
+
+Log2DatabaseWorldlineTest > testCommit() PASSED
+
+Log2DatabaseWorldlineTest > testForPreAuthCompletion() PASSED
+
+PreparePOSReversal2WorldlineTest > testPrepareVoid() PASSED
+
+PreparePOSReversal2WorldlineTest > testPreparePOSVoid() PASSED
+
+PreparePOSReversal2WorldlineTest > testPreparePOSReversal() PASSED
+
+PreparePOSReversal2WorldlineTest > testPrepareVoid1() PASSED
+
+PreparePOSReversal2WorldlineTest > testPrepareVoid2() PASSED
+
+PreparePOSReversal2WorldlineTest > testPrepare() PASSED
+
+PreparePOSReversal2WorldlineTest > testPrepare1() PASSED
+
+PreparePOSReversal2WorldlineTest > testPrepare2() PASSED
+
+PreparePOSReversal2WorldlineTest > testPrepare4() PASSED
+
+PreparePOSReversal2WorldlineTest > testPrepare21() PASSED
+
+PreparePOSReversal2WorldlineTest > testPrepareTimeStamp() PASSED
+
+PreparePOSReversal2WorldlineTest > testPreparePOSVoid1() PASSED
+
+PreparePOSReversal2WorldlineTest > testPreparePOSReversal1() PASSED
+
+PreparePreAuthCompletionRequest2WorldlineTest > testPrepare() PASSED
+
+PrepareRequest2WorldlineTest > prepare1() PASSED
+
+PrepareRequest2WorldlineTest > prepare() PASSED
+
+PrepareSwitchReversal2WorldlineTest > testPrepare() PASSED
+
+PrepareSwitchReversal2WorldlineTest > testFailureCase() PASSED
+
+QueryWorldlineTest > testExpired() PASSED
+
+QueryWorldlineTest > testMuxIsNotAvailableCase() PASSED
+
+QueryWorldlineTest > testProcessWithMUXIsNotConnected() PASSED
+
+QueryWorldlineTest > testProcessForContinuationsAsTrue() PASSED
+
+QueryWorldlineTest > testResponseReceived() PASSED
+
+QueryWorldlineTest > testMessage2SchemeMissingCase() PASSED
+
+QueryWorldlineTest > testProcessWithOutDestination() PASSED
+
+QueryWorldlineTest > testProcessWithContinuesAsFalseWithISOMsgAsNotNull() PASSED
+
+QueryWorldlineTest > testProcessWithContinuesAsFalseWithISOMsgAsNull() PASSED
+
+SendResponseFromWorldlineTest > testSetConfiguration() PASSED
+
+SendResponseFromWorldlineTest > testSetTransactionManager() PASSED
+
+SendResponseFromWorldlineTest > testProcess() PASSED
+
+SendResponseFromWorldlineTest > testCommitWithFalseCase() PASSED
+
+SendResponseFromWorldlineTest > testReverse() PASSED
+
+SendResponseFromWorldlineTest > testCommit() PASSED
+
+ComplianceNoneTest > makeCompliantTest() PASSED
+
+ComplianceWipeTest > makeCompliantTest() PASSED
+
+TLVComplianceTest > makeCompliantTest1() PASSED
+
+TLVComplianceTest > makeCompliantTest() PASSED
+
+UtilsTest > concatTest() PASSED
+
+UtilsTest > leftPadTest() PASSED
+
+UtilsTest > substringAfterTest() PASSED
+
+UtilsTest > substringAftertest() PASSED
+
+UtilsTest > substringAfterTest1() PASSED
+
+UtilsTest > substringAftertest4() PASSED
+
+UtilsTest > substringAftertest5() PASSED
+
+UtilsTest > leftPadTest12() PASSED
+
+UtilsTest > leftPadTest13() PASSED
+
+UtilsTest > leftPadTest14() PASSED
+
+UtilsTest > leftPadTest15() PASSED
+
+UtilsTest > leftPadTest17() PASSED
+
+UtilsTest > midtest1() PASSED
+
+UtilsTest > midtest2() PASSED
+
+UtilsTest > midtest4() PASSED
+
+UtilsTest > prettyOutTest() PASSED
+
+UtilsTest > rightPadTest10() PASSED
+
+UtilsTest > righttest() PASSED
+
+UtilsTest > righttest1() PASSED
+
+UtilsTest > righttest2() PASSED
+
+UtilsTest > righttest3() PASSED
+
+UtilsTest > leftPadTest1() PASSED
+
+UtilsTest > leftPadTest2() PASSED
+
+UtilsTest > leftPadTest3() PASSED
+
+UtilsTest > leftPadTest4() PASSED
+
+UtilsTest > substringBetweenTest() PASSED
+
+UtilsTest > substringBetweentest() PASSED
+
+UtilsTest > hexDumpTest() PASSED
+
+UtilsTest > rightPadTest1() PASSED
+
+UtilsTest > rightPadTest2() PASSED
+
+UtilsTest > rightPadTest3() PASSED
+
+UtilsTest > rightPadTest4() PASSED
+
+UtilsTest > rightPadTest5() PASSED
+
+UtilsTest > rightPadTest6() PASSED
+
+UtilsTest > rightPadTest7() PASSED
+
+UtilsTest > rightPadTest8() PASSED
+
+UtilsTest > rightPadTest9() PASSED
+
+UtilsTest > hexStringToByteArrayTest() PASSED
+
+UtilsTest > removeEndTest() PASSED
+
+UtilsTest > substringAfterLasttest1() PASSED
+
+UtilsTest > substringAfterLasttest2() PASSED
+
+UtilsTest > substringAfterLasttest4() PASSED
+
+UtilsTest > printISOMsgTest() PASSED
+
+UtilsTest > leftPad() PASSED
+
+UtilsTest > removeEndTest1() PASSED
+
+UtilsTest > substringBeforetest1() PASSED
+
+UtilsTest > substringBeforetest2() PASSED
+
+UtilsTest > substringBeforetest3() PASSED
+
+UtilsTest > substringBeforeLasttest1() PASSED
+
+UtilsTest > substringBeforeLasttest3() PASSED
+
+UtilsTest > midtest() PASSED
+
+UtilsTest > repeattest() PASSED
+
+UtilsTest > rightPadtest() PASSED
+
+UtilsTest > isEmptyNullTest1() PASSED
+
+UtilsTest > isEmptyNullTest2() PASSED
+
+UtilsTest > isEmptyNullTest3() PASSED
+
+UtilsTest > substringBeforetest() PASSED
+
+UtilsTest > isEmptyNullTest() PASSED
+
+UtilsTest > substringBetweenTest1() PASSED
+
+UtilsTest > repeattest1() PASSED
+
+UtilsTest > repeattest2() PASSED
+
+UtilsTest > repeattest3() PASSED
+
+UtilsTest > repeattest4() PASSED
+
+UtilsTest > repeattest5() PASSED
+
+UtilsTest > repeattest6() PASSED
+
+UtilsTest > repeattest7() PASSED
+
+UtilsTest > repeattest8() PASSED
+
+UtilsTest > repeattest9() PASSED
+
+UtilsTest > lefttest() PASSED
+
+UtilsTest > lefttest1() PASSED
+
+UtilsTest > lefttest2() PASSED
+
+UtilsTest > lefttest3() PASSED
+
+UtilsTest > printISOMsgForELKTest() PASSED
+
+UtilsTest > substringAfterLasttest() PASSED
+
+UtilsTest > substringBeforeLasttest() PASSED
+
+> Task :jacocoTestReport
+[ant:jacocoReport] Classes in bundle 'middleware' do not match with execution data. For report generation the same class files must be used as at runtim
+e.
+[ant:jacocoReport] Execution data for class in/atomtech/mw/Constants does not match.
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 7.0.
+Use '--warning-mode all' to show the individual deprecation warnings.
+See https://docs.gradle.org/6.4/userguide/command_line_interface.html#sec:command_line_warnings
+
+BUILD SUCCESSFUL in 42s
+8 actionable tasks: 8 executed
+
+
+
+
 
 
