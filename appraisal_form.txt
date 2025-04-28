@@ -609,6 +609,108 @@ jacocoTestCoverageVerification {
 apply from: 'jpos-app.gradle'
 
 
+-----
+
+plugins {
+    id 'java'
+    id 'jacoco'
+    id 'idea'
+    id 'eclipse'
+    id 'org.sonarqube' version '2.8'
+}
+
+group = 'org.jpos.template'
+version = '2.1.9'
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    maven {
+        url 'http://nexus.atomtech.in/repository/ndps-maven-group/'
+        credentials {
+            username 'nexus-user'
+            password 'Nexus@123'
+        }
+    }
+    maven { url "https://jitpack.io" }
+    gradlePluginPortal()
+}
+
+dependencies {
+    implementation 'org.jpos:jpos:2.+'
+    implementation 'org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.8'
+    implementation 'org.sonarsource.scanner.maven:sonar-maven-plugin:3.9.0.2155'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+
+    compileOnly 'org.meanbean:meanbean:2.0.3'
+    testImplementation 'org.mockito:mockito-core:3.11.2'
+    testImplementation 'org.mockito:mockito-junit-jupiter:3.11.2'
+    testImplementation 'org.mockito:mockito-inline:3.11.2'
+
+    implementation 'com.atom.ots-java:OTSMerchantJar:3.0.5@jar'
+    implementation 'javax.validation:validation-api:2.0.1.Final'
+    implementation 'org.hibernate.validator:hibernate-validator:6.0.20.Final'
+    implementation 'javax.el:javax.el-api:3.0.0'
+    implementation 'org.glassfish.web:javax.el:2.2.6'
+    implementation 'org.apache.commons:commons-lang3:3.12.0'
+}
+
+jacoco {
+    toolVersion = "0.8.7"
+}
+
+tasks.withType(Test) {
+    useJUnitPlatform()
+    finalizedBy jacocoTestReport
+
+    jacoco {
+        enabled = true
+        destinationFile = file("$buildDir/jacoco/test.exec")
+    }
+    testLogging {
+        events "passed", "skipped", "failed"
+        exceptionFormat = 'full'
+    }
+}
+
+jacocoTestReport {
+    dependsOn test
+    reports {
+        xml.required = true
+        html.required = true
+    }
+}
+
+jacocoTestCoverageVerification {
+    dependsOn jacocoTestReport
+    violationRules {
+        rule {
+            limit {
+                minimum = 0.10
+            }
+        }
+    }
+}
+
+sonarqube {
+    properties {
+        property "sonar.sourceEncoding", "UTF-8"
+        property "sonar.language", "java"
+        property "sonar.sources", "src/main/java"
+        property "sonar.java.binaries", "build/classes"
+        property 'sonar.coverage.exclusions', "**/*Test.java, **/*Tests.java, **/*TestCase.java, **/*AsciiLengthPackagerTest.java"
+        property "sonar.test.exclusions", "**/*Test.java, **/*Tests.java, **/*TestCase.java"
+    }
+}
+
+// if needed
+apply from: 'jpos-app.gradle'
+
+
 
 
 
